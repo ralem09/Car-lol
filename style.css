@@ -1,0 +1,179 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body 
+{
+    min-height: 100vh;
+    background: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background {
+    width: 850px;
+    height: 550px;
+    position: relative;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: -10px -10px 15px rgba(0, 0, 0, 0.9),
+    8px 8px 25px rgba(0, 0, 0, 0.5);
+    background: #eaeef0;
+    overflow: hidden;
+}
+.sun{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 40px #ffff5b,
+    0 0 60px #ffff5b,
+    0 0 80px #ffff5b,
+    0 0 100px #ffff5b;
+}
+.road{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top: 50%;
+    left: 0;
+    background: #333;
+}
+
+.road::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: #0d9e0d;
+}
+
+.road::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: repeating-linear-gradient(90deg, transparent 0, transparent 50%, #fff 50%, rgb(255, 255, 255) 100%);
+    background-size: 20px;
+    animation: animateroad .2s  linear infinite;
+}
+@keyframes animateroad {
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position-x: -20px;
+    }
+}
+.fa-van-shuttle{
+    font-size: 7em;
+    color: rgb(208, 123, 219);
+    position: absolute;
+    left: 30px;
+    z-index: 4;
+    -webkit-text-stroke: 2px rgb(96, 19, 221);
+    animation: van .2s linear infinite;
+    bottom: 220px;
+}
+.fa-face-grin-beam{
+    position: absolute;
+    top: 235px;
+    left: 115px;
+    background: opacity;
+    color: #ffdfc4;
+    z-index: 5;
+    font-size: 25px;
+    animation: van .2s linear infinite;
+}
+.fa-person-biking{
+    font-size: 5em;
+    color: rgb(53, 215, 221);
+    position: absolute;
+    left: 250px;
+    z-index: 10;
+    -webkit-text-stroke: 2px rgb(201, 7, 7);
+    animation: biking 6s linear infinite;
+    bottom: 220px;
+}
+
+@keyframes van{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(1px);
+    }
+}
+@keyframes biking{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(2px);
+    }
+    0%{
+        transform: translateX(-500px)
+    }
+    100%{
+        transform: translateX(750px)
+    }
+}
+
+.fa-cloud{
+    position: absolute;
+    top: calc(5px * var(--i));
+    left: calc(15px * var(--i));
+    font-size: 6em;
+    color: rgb(6, 28, 88);
+    z-index: 1;
+    -webkit-text-stroke: 3px #000;
+    animation: cloud 3.5s linear infinite;
+    animation-delay: calc(-2s*var(--i))
+
+}
+@keyframes cloud{
+    0%{
+        transform: translateX(600px);
+    }
+    100%{
+        transform: translateX(-350px);
+    }
+}
+.fa-tree{
+    position: absolute;
+    bottom: 275px;
+    font-size: 7em;
+    color: #0d9e0d;
+    z-index: 2;
+    animation: cloud 7s  linear infinite;
+    animation-delay: calc(-1s*var(--i));
+}
+.fa-mountain{
+    position: absolute;
+    bottom: 200px;
+    font-size:  20em;
+    color: rgb(107, 162, 199);
+    animation: cloud 10s linear infinite;
+    animation-delay: calc(-3s*var(--i));
+}
+
+.but_1{
+    position: absolute;
+    top: 480px;
+    right: 750px;
+}
+.but_2{
+    position: absolute;
+    top: 480px;
+    right: 800px;
+    
+
+}
